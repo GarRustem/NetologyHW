@@ -1,7 +1,10 @@
 # Default ignored files
 /shelf/
 /workspace.xml
-/*.iml
+/.iml
 /.idea
 /out
 /target
+/GitHW1/.idea
+/GitHW1/out
+/GitHW1/GitHW1.iml
