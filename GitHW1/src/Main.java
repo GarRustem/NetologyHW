@@ -5,6 +5,14 @@ public class Main {
 
         int maxElement = salesManager.max();
 
+        int minElement = salesManager.min();
+
+        int averageStat = salesManager.stat(minElement, maxElement);
+
+        System.out.println(minElement);
+
         System.out.println(maxElement);
+
+        System.out.println(averageStat);
     }
 }
