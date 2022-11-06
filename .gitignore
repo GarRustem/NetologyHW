@@ -1,7 +1,6 @@
 
 /shelf/
 /workspace.xml
-<<<<<<< HEAD
 \*.iml
 /.idea
 out/
@@ -9,13 +8,13 @@ out/
 !"D:\1. Workplace\1. Java\NetologyHW\GitHW1\src"
 GitHW1/.idea/
 GitHW1/GitHW1.iml
-=======
 ../\*.iml
 /GitHW1/*
 !/GitHW1/src/
 GitHW1/.idea/
 GitHW1/GitHW1.iml
 GitHW1/out/
-
->>>>>>> longer
-
+/MagicBox/*
+!/MagicBox/src/
+MagicBox/.idea/
+MagicBox/out/
