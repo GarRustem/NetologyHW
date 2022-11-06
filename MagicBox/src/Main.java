@@ -21,9 +21,5 @@ public class Main {
         int fromIntegerMB = integerMagicBox.pick();
 
         System.out.println("From our boxes we take out " + fromIntegerMB + " " + fromStringMB + "s");
-
-//        Random random = new Random();
-//        int index = random.nextInt(10);
-//        System.out.println(index);
     }
 }
