@@ -14,7 +14,13 @@ GitHW1/GitHW1.iml
 GitHW1/.idea/
 GitHW1/GitHW1.iml
 GitHW1/out/
+
 /MagicBox/*
 !/MagicBox/src/
 MagicBox/.idea/
 MagicBox/out/
+
+/ProductList/*
+!/ProductList/src/
+ProductList/.idea/
+ProductList/out/
