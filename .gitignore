@@ -24,3 +24,8 @@ MagicBox/out/
 !/ProductList/src/
 ProductList/.idea/
 ProductList/out/
+
+/Attraction/*
+!/Attraction/src/
+Attraction/.idea/
+Attraction/out/
