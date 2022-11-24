@@ -20,9 +20,9 @@ public class Main {
 
         while(!queue.isEmpty()) {
             Person person = queue.poll();
-            person.tickets--;
-            System.out.println(person.name + " " + person.surname + " has ride attraction and left " + person.tickets + " tickets.");
-            if (person.tickets > 0) {
+            person.setTickets(person.getTickets() - 1);
+            System.out.println(person.getName() + " " + person.getSurname() + " has ride attraction and left " + person.getTickets() + " tickets.");
+            if (person.getTickets() > 0) {
                 queue.offer(person);
             }
         }
