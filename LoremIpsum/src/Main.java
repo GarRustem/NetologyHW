@@ -56,5 +56,8 @@ public class Main {
         System.out.println("Minimum frequency for letters from this text is: " + charSetMin +
                 " = " + minNum + "\n" + "Maximum frequency for letters from this text is: " +
                 charMapMax.keySet() + " = " + maxNum);
+
+        WordsChecker check = new WordsChecker(lorem);
+        System.out.println(check.hasWord("amet"));
     }
 }
