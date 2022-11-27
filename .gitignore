@@ -30,3 +30,8 @@ ProductList/out/
 !/Attraction/src/
 Attraction/.idea/
 Attraction/out/
+
+/LoremIpsum/*
+!/LoremIpsum/src/
+LoremIpsum/.idea/
+LoremIpsum/out/
