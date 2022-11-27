@@ -24,7 +24,7 @@ public class Main {
             if(symbolCount.containsKey(lorem.charAt(i))) {
                 counter = symbolCount.get(lorem.charAt(i));
                 counter++;
-                symbolCount.replace(lorem.charAt(i), counter); // Почему в качестве второго аргумента я не могу передать "counter++"? Приходится использовать строку 23.
+                symbolCount.replace(lorem.charAt(i), counter); // Почему в качестве второго аргумента я не могу передать "counter++"? Приходится использовать строку 26.
             } else {
                 symbolCount.put(lorem.charAt(i), 1);
             }
