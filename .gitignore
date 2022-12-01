@@ -35,3 +35,8 @@ Attraction/out/
 !/LoremIpsum/src/
 LoremIpsum/.idea/
 LoremIpsum/out/
+
+/Person/*
+!/Person/src/
+Person/.idea/
+Person/out/
