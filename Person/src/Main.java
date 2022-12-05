@@ -20,8 +20,18 @@ public class Main {
 
         System.out.println(person); // Проверка стандартного порядка для List
 
-        person.sort(new PersonComparator(4).reversed());
+        person.sort((Person o1, Person o2) -> {
+            int limit = 5; // Все фамилии с количеством слов 5 и более считаются одинаковыми и сравниваются по возрасту.
+            String[] royalSurnameA = o1.getSurname().split(" ");
+            String[] royalSurnameB = o2.getSurname().split(" ");
 
-        System.out.println(person); // Проверка заданной сортировки
+            if (royalSurnameA.length == royalSurnameB.length || royalSurnameA.length >= limit && royalSurnameB.length >= limit) {
+                return Integer.compare(o1.getAge(), o2.getAge());
+            } else {
+                return Integer.compare(royalSurnameA.length, royalSurnameB.length);
+            }
+        });
+
+        System.out.println(person); // Проверка заданной сортировки. Как реализовать обратную сортировку, чтобы первым шел самый знатный?
     }
 }
