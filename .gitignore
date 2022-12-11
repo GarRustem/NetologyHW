@@ -52,7 +52,8 @@ Person/out/
 MavenHW/.idea/
 MavenHW/out/
 
-/GradleNewHW/*
+
+
 !/GradleNewHW/api/build.gradle
 !/GradleNewHW/api/src/main/java/
 !/GradleNewHW/db/build.gradle
@@ -60,6 +61,18 @@ MavenHW/out/
 !/GradleNewHW/service/build.gradle
 !/GradleNewHW/service/src/main/java/
 !/GradleNewHW/settings.gradle
+/GradleNewHW/api/build
+/GradleNewHW/api/src
+/GradleNewHW/db/src
+/GradleNewHW/db/build
+/GradleNewHW/service/src
+/GradleNewHW/service/build
+/GradleNewHW/build.gradle
+/GradleNewHW/gradlew
+/GradleNewHW/gradlew.bat
+/GradleNewHW/build/
+/GradleNewHW/gradle/
+/GradleNewHW/.gradle/
 /GradleNewHW/.idea/
 /GradleNewHW/out/
 /GradleNewHW/src/
