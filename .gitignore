@@ -53,16 +53,16 @@ MavenHW/.idea/
 MavenHW/out/
 
 /GradleNewHW/*
-!/GradleHW/api/build.gradle
-!/GradleHW/api/src/main/java/
-!/GradleHW/db/build.gradle
-!/GradleHW/db/src/main/java/
-!/GradleHW/service/build.gradle
-!/GradleHW/service/src/main/java/
-!/GradleHW/settings.gradle
-GradleHW/.idea/
-GradleHW/out/
-GradleHW/src/
+!/GradleNewHW/api/build.gradle
+!/GradleNewHW/api/src/main/java/
+!/GradleNewHW/db/build.gradle
+!/GradleNewHW/db/src/main/java/
+!/GradleNewHW/service/build.gradle
+!/GradleNewHW/service/src/main/java/
+!/GradleNewHW/settings.gradle
+GradGradleNewHWleHW/.idea/
+GradleNewHW/out/
+GradleNewHW/src/
 
 StreamAPI/*
 StreamHW/*
