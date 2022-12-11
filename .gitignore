@@ -60,9 +60,9 @@ MavenHW/out/
 !/GradleNewHW/service/build.gradle
 !/GradleNewHW/service/src/main/java/
 !/GradleNewHW/settings.gradle
-GradGradleNewHWleHW/.idea/
-GradleNewHW/out/
-GradleNewHW/src/
+/GradleNewHW/.idea/
+/GradleNewHW/out/
+/GradleNewHW/src/
 
 StreamAPI/*
 StreamHW/*
