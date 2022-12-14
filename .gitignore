@@ -81,3 +81,8 @@ StreamAPI/*
 StreamHW/*
 untitled/*
 tmp/*
+
+/FoodBasket/*
+!/FoodBasket/src/
+FoodBasket/.idea/
+FoodBasket/out/
