@@ -11,6 +11,9 @@ public class Main {
 
     Basket basket = new Basket(products, prices);
 
+    //Basket.loadFromTxtFile(new File(".//productList.txt")); // Не понимаю, почему не работает загрузка данных из файла.
+    // хотя и без этого метода программа либо создает новый текстовый файл, либо заполняет существующий.
+
     basket.addToCart(count, goodsQuantity);
 
     basket.printCart();

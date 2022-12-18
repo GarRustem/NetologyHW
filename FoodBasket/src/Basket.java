@@ -2,7 +2,6 @@ import java.io.*;
 import java.util.Scanner;
 
 public class Basket {
-
     protected String[] products;
     protected int[] prices;
     protected int[] goodsQuantity = new int[3];
@@ -11,12 +10,13 @@ public class Basket {
     protected int product;
     protected int quantity;
 
-    FileWriter basketFile;
+    protected FileWriter basketFile;
 
     public Basket(String[] products, int[] prices) {
         this.products = products;
         this.prices = prices;
     }
+    Scanner scanner = new Scanner(System.in);
 
     public void addToCart(int count, int[] goodsQuantity) {
         this.count = count;
@@ -30,8 +30,6 @@ public class Basket {
             count++;
             System.out.println(count + ". " + k + " for " + j + " RUR/100g");
         }
-
-        Scanner scanner = new Scanner(System.in);
 
         while (true) {
 
@@ -90,16 +88,23 @@ public class Basket {
 
     public void saveTxt(int[] goodsQuantity, int product) {
         try {
-            basketFile = new FileWriter(".//productBasket.txt", true);
-            basketFile.write(products[product - 1]);
-            basketFile.write("\t");
-            basketFile.write(" - ");
-            basketFile.write("\t");
-            basketFile.write(String.valueOf(goodsQuantity[product - 1]));
-            basketFile.write("\n");
-            basketFile.close();
+                basketFile = new FileWriter(".//productBasket.txt", true);
+                basketFile.write(products[product - 1]);
+                basketFile.write("\t");
+                basketFile.write(" - ");
+                basketFile.write("\t");
+                basketFile.write(String.valueOf(goodsQuantity[product - 1]));
+                basketFile.write("\n");
+                basketFile.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    static Basket loadFromTxtFile (File basketFile) throws IOException {
+        if (!basketFile.exists()) {
+            basketFile = new File(".//productList.txt");
+        }
+        return Basket.loadFromTxtFile(basketFile);
     }
 }
