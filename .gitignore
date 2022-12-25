@@ -87,7 +87,6 @@ tmp/*
 FoodBasket/.idea/
 FoodBasket/out/
 
-/geo-service/*
 !/geo-service/src/
 !/geo-service/pom.xml
 geo-service/.idea/
