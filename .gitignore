@@ -92,3 +92,9 @@ FoodBasket/out/
 OSI/.idea/
 OSI/out/
 OSI/target/
+
+!/OSICity/src/
+!/OSICity/pom.xml
+OSICity/.idea/
+OSICity/out/
+OSICity/target/
