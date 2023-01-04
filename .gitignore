@@ -98,3 +98,9 @@ OSI/target/
 OSICity/.idea/
 OSICity/out/
 OSICity/target/
+
+!/HTTPproject/src/
+!/HTTPproject/pom.xml
+HTTPproject/.idea/
+HTTPproject/out/
+HTTPproject/target/
