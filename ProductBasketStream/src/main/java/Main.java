@@ -10,16 +10,16 @@ public class Main {
         Basket basket = new Basket(products, prices);
         File file = new File(".//productBasket.txt");
 
-//        try {
+        try {
             if (file.exists()) {
                 Basket.loadFromTextFile(file);
                 basket.printCart();
             } else {
                 file.createNewFile();
             }
-//        } catch (Exception e) {
-//            System.out.println("Program is broken");
-//        }
+        } catch (Exception e) {
+            System.out.println("Program is broken");
+        }
 
         basket.addToCard(basket.count, basket.goodsQuantity);
 
