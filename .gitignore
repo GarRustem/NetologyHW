@@ -104,3 +104,11 @@ OSICity/target/
 HTTPproject/.idea/
 HTTPproject/out/
 HTTPproject/target/
+
+!/ProductBasketStream/src/
+!/ProductBasketStream/pom.xml
+ProductBasketStream/.idea/
+ProductBasketStream/out/
+ProductBasketStream/target/
+
+geoService/*
