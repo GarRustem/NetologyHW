@@ -12,8 +12,8 @@ public class Main {
 
         try {
             if (file.exists()) {
-                Basket.loadFromTextFile(file);
-                basket.printCart();
+                Basket restoredBasket = Basket.loadFromTextFile(file);
+                restoredBasket.printCart();
             } else {
                 file.createNewFile();
             }

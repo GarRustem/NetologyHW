@@ -96,14 +96,6 @@ public class Basket implements Serializable {
             for (int quantity : goodsQuantity) {
                 output.println(quantity);
             }
-
-//            for (int i = 0; i <= goodsQuantity.length - 1; i++) {
-//                if (goodsQuantity[i] != 0) {
-//                    output.println(products[i]);
-//                    output.println(prices[i]);
-//                    output.println(goodsQuantity[i]);
-//                }
-//            }
         }
     }
     public static Basket loadFromTextFile(File file) throws IOException {
@@ -114,30 +106,15 @@ public class Basket implements Serializable {
             basket.prices = new int[size];
             basket.goodsQuantity = new int[size];
 
-            for (int i = 0; i < basket.products.length; i++) {
-                basket.products[i] = basketFromFile.readLine();
-            }
-            for (int i = 0; i < basket.products.length; i++) {
-                basket.prices[i] = Integer.parseInt(basketFromFile.readLine());
-            }
-            for (int i = 0; i < basket.products.length; i++) {
-                basket.goodsQuantity[i] = Integer.parseInt(basketFromFile.readLine());
-            }
-//            for (int i = 0; i < basket.products.length; i++) {
-//                while(basketFromFile.readLine() != null) {
-//                    basket.products[i] = basketFromFile.readLine();
-//                }
-//            }
-//            for (int i = 0; i < basket.products.length; i++) {
-//                while(basketFromFile.readLine() != null) {
-//                    basket.prices[i] = Integer.parseInt(basketFromFile.readLine());
-//                }
-//            }
-//            for (int i = 0; i < basket.products.length; i++) {
-//                while(basketFromFile.readLine() != null) {
-//                    basket.goodsQuantity[i] = Integer.parseInt(basketFromFile.readLine());
-//                }
-//            }
+                for (int i = 0; i < basket.products.length; i++) {
+                    basket.products[i] = basketFromFile.readLine();
+                }
+                for (int i = 0; i < basket.products.length; i++) {
+                    basket.prices[i] = Integer.parseInt(basketFromFile.readLine());
+                }
+                for (int i = 0; i < basket.products.length; i++) {
+                    basket.goodsQuantity[i] = Integer.parseInt(basketFromFile.readLine());
+                }
             return basket;
         }
     }
