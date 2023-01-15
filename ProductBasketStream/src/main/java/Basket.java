@@ -85,34 +85,59 @@ public class Basket implements Serializable {
     }
 
     public void saveTextFile(File file) throws IOException {
-        try (PrintWriter output = new PrintWriter(file);) {
-            for (int i = 0; i <= goodsQuantity.length - 1; i++) {
-                if (goodsQuantity[i] != 0) {
-                    output.println(products[i]);
-                    output.println(prices[i]);
-                    output.println(goodsQuantity[i]);
-                }
+        try (PrintWriter output = new PrintWriter(file)) {
+            output.println(products.length);
+            for (String product : products) {
+                output.println(product);
             }
+            for (int price : prices) {
+                output.println(price);
+            }
+            for (int quantity : goodsQuantity) {
+                output.println(quantity);
+            }
+
+//            for (int i = 0; i <= goodsQuantity.length - 1; i++) {
+//                if (goodsQuantity[i] != 0) {
+//                    output.println(products[i]);
+//                    output.println(prices[i]);
+//                    output.println(goodsQuantity[i]);
+//                }
+//            }
         }
     }
     public static Basket loadFromTextFile(File file) throws IOException {
         try (BufferedReader basketFromFile = new BufferedReader(new FileReader(file))) {
             Basket basket = new Basket();
+            int size = Integer.parseInt(basketFromFile.readLine());
+            basket.products = new String[size];
+            basket.prices = new int[size];
+            basket.goodsQuantity = new int[size];
+
             for (int i = 0; i < basket.products.length; i++) {
-                while(basketFromFile.readLine() != null) {
-                    basket.products[i] = basketFromFile.readLine();
-                }
+                basket.products[i] = basketFromFile.readLine();
             }
             for (int i = 0; i < basket.products.length; i++) {
-                while(basketFromFile.readLine() != null) {
-                    basket.prices[i] = Integer.parseInt(basketFromFile.readLine());
-                }
+                basket.prices[i] = Integer.parseInt(basketFromFile.readLine());
             }
             for (int i = 0; i < basket.products.length; i++) {
-                while(basketFromFile.readLine() != null) {
-                    basket.goodsQuantity[i] = Integer.parseInt(basketFromFile.readLine());
-                }
+                basket.goodsQuantity[i] = Integer.parseInt(basketFromFile.readLine());
             }
+//            for (int i = 0; i < basket.products.length; i++) {
+//                while(basketFromFile.readLine() != null) {
+//                    basket.products[i] = basketFromFile.readLine();
+//                }
+//            }
+//            for (int i = 0; i < basket.products.length; i++) {
+//                while(basketFromFile.readLine() != null) {
+//                    basket.prices[i] = Integer.parseInt(basketFromFile.readLine());
+//                }
+//            }
+//            for (int i = 0; i < basket.products.length; i++) {
+//                while(basketFromFile.readLine() != null) {
+//                    basket.goodsQuantity[i] = Integer.parseInt(basketFromFile.readLine());
+//                }
+//            }
             return basket;
         }
     }
