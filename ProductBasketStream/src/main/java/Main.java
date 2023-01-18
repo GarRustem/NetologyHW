@@ -1,18 +1,19 @@
 import java.io.File;
 import java.io.IOException;
+import java.io.Serializable;
 
-public class Main {
+public class Main implements Serializable {
 
     public static void main(String[] args) throws IOException {
 
         String[] products = {"Milk", "Coffee", "Sugar"};
         int[] prices = {20, 300, 150};
         Basket basket = new Basket(products, prices);
-        File file = new File(".//productBasket.txt");
+        File file = new File(".//basket.bin");
 
         try {
             if (file.exists()) {
-                Basket restoredBasket = Basket.loadFromTextFile(file);
+                Basket restoredBasket = Basket.loadFromBin(file);
                 restoredBasket.printCart();
             } else {
                 file.createNewFile();
@@ -25,6 +26,6 @@ public class Main {
 
         basket.printCart();
 
-        basket.saveTextFile(file);
+        basket.saveBin(file);
     }
 }

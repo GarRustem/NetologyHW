@@ -21,7 +21,7 @@ public class Basket implements Serializable {
     private Basket() {
     } // Модификатор доступа private для того, чтобы нельзя было создать пустую корзину (не указывая ассортимент) - только для внутренней логики программы в рамках открытия файла существующей корзины, когда еще не сделаны заказы, а нужно восстановить корзину из файла.
 
-    Scanner scanner = new Scanner(System.in);
+    transient Scanner scanner = new Scanner(System.in);
 
     public void addToCard(int count, int[] goodsQuantity) {
 
@@ -84,38 +84,15 @@ public class Basket implements Serializable {
         System.out.println("Total price is: " + totalPrice);
     }
 
-    public void saveTextFile(File file) throws IOException {
-        try (PrintWriter output = new PrintWriter(file)) {
-            output.println(products.length);
-            for (String product : products) {
-                output.println(product);
-            }
-            for (int price : prices) {
-                output.println(price);
-            }
-            for (int quantity : goodsQuantity) {
-                output.println(quantity);
-            }
+    public void saveBin(File file) throws IOException {
+        try (ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream(file))) {
+            output.writeObject(this);
         }
     }
-    public static Basket loadFromTextFile(File file) throws IOException {
-        try (BufferedReader basketFromFile = new BufferedReader(new FileReader(file))) {
-            Basket basket = new Basket();
-            int size = Integer.parseInt(basketFromFile.readLine());
-            basket.products = new String[size];
-            basket.prices = new int[size];
-            basket.goodsQuantity = new int[size];
 
-                for (int i = 0; i < basket.products.length; i++) {
-                    basket.products[i] = basketFromFile.readLine();
-                }
-                for (int i = 0; i < basket.products.length; i++) {
-                    basket.prices[i] = Integer.parseInt(basketFromFile.readLine());
-                }
-                for (int i = 0; i < basket.products.length; i++) {
-                    basket.goodsQuantity[i] = Integer.parseInt(basketFromFile.readLine());
-                }
-            return basket;
+    public static Basket loadFromBin(File file) throws IOException, ClassNotFoundException {
+        try (ObjectInputStream input = new ObjectInputStream(new FileInputStream(file))) {
+            return (Basket) input.readObject();
         }
     }
 }
