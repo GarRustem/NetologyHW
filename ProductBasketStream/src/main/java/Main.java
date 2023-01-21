@@ -12,7 +12,7 @@ public class Main {
 
         try {
             if (file.exists()) {
-                Basket restoredBasket = Basket.loadFromTextFile(file);
+                Basket restoredBasket = Basket.loadFromTextFile(file); // // Заменить на десериализацию через JSON basket.json. При этом логику сериализации в методах в классе корзины трогать не нужно.
                 restoredBasket.printCart();
             } else {
                 file.createNewFile();
@@ -25,6 +25,6 @@ public class Main {
 
         basket.printCart();
 
-        basket.saveTextFile(file);
+        basket.saveTextFile(file); // Заменить на сериализацию через JSON basket.json. При этом логику сериализации в методах в классе корзины трогать не нужно.
     }
 }
