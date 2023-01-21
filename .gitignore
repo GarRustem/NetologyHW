@@ -112,3 +112,6 @@ ProductBasketStream/out/
 ProductBasketStream/target/
 
 geoService/*
+
+ProductBasketStream/basket.bin
+ProductBasketStream/productBasket.txt
