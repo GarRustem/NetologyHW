@@ -1,3 +1,6 @@
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
+
 import java.io.*;
 import java.util.Scanner;
 
@@ -10,6 +13,7 @@ public class Basket implements Serializable {
     protected int totalPrice = 0;
     protected int product;
     protected int quantity;
+    protected ClientLog clientLog = new ClientLog();
 
     public Basket(String[] products, int[] prices) {
         this.products = products;
@@ -40,6 +44,8 @@ public class Basket implements Serializable {
             String delimiter = ",";
 
             if ("end".equals(input)) {
+
+                clientLog.exportAsCSV(new File(".//client.csv"));
                 break;
             }
 
@@ -67,6 +73,7 @@ public class Basket implements Serializable {
                 int productPrice = prices[product - 1];
                 goodsQuantity[product - 1] += quantity;
                 totalPrice += productPrice * quantity;
+                clientLog.log(product, quantity);
             } else {
                 System.out.println("You must input product number and its quantity, separated by comma in format NUMBER,NUMBER");
             }
@@ -116,6 +123,20 @@ public class Basket implements Serializable {
                     basket.goodsQuantity[i] = Integer.parseInt(basketFromFile.readLine());
                 }
             return basket;
+        }
+    }
+    public void saveJson (File file) throws IOException {
+        try (PrintWriter output = new PrintWriter(file)) {
+            Gson gson = new Gson();
+            String saveJsonForm = gson.toJson(this);
+            output.println(saveJsonForm);
+        }
+    }
+    public static Basket loadFromJson (File file) throws IOException {
+        try (BufferedReader basketFromFile = new BufferedReader(new FileReader(file))) {
+            Gson gson = new Gson();
+            String json = basketFromFile.readLine();
+            return gson.fromJson(json, Basket.class);
         }
     }
 }

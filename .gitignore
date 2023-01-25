@@ -107,6 +107,7 @@ HTTPproject/target/
 
 !/ProductBasketStream/src/
 !/ProductBasketStream/pom.xml
+!/ProductBasketStream/shop.xml
 ProductBasketStream/.idea/
 ProductBasketStream/out/
 ProductBasketStream/target/
