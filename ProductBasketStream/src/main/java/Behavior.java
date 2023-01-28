@@ -10,7 +10,6 @@ import javax.xml.xpath.XPathFactory;
 import java.io.IOException;
 
 public class Behavior {
-
     DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
     DocumentBuilder builder = factory.newDocumentBuilder();
     Document doc = builder.parse("shop.xml");

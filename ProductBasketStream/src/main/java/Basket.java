@@ -1,6 +1,10 @@
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.SerializedName;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPathExpressionException;
 import java.io.*;
 import java.util.Scanner;
 
@@ -15,19 +19,21 @@ public class Basket implements Serializable {
     protected int quantity;
     protected ClientLog clientLog = new ClientLog();
 
-    public Basket(String[] products, int[] prices) {
+    public Basket(String[] products, int[] prices) throws XPathExpressionException, IOException, ParserConfigurationException, SAXException {
         this.products = products;
         this.prices = prices;
         this.goodsQuantity = new int[products.length];
         this.count = 0;
     }
-
+//------------------------!!!!!!!!!!!!!!!!!!!!!--------------------------------- ВСЕ ЗАРАБОТАЛО, КОГДА ВЫНЕС Scanner scanner И String delimiter = "," В МЕТОД addToCard()
     private Basket() {
-    } // Модификатор доступа private для того, чтобы нельзя было создать пустую корзину (не указывая ассортимент) - только для внутренней логики программы в рамках открытия файла существующей корзины, когда еще не сделаны заказы, а нужно восстановить корзину из файла.
+    }
 
-    Scanner scanner = new Scanner(System.in);
+//    Scanner scanner = new Scanner(System.in); - ВЫНЕС В СТРОЧКУ 35 - В МЕТОД addToCard() <------------------------!!!!!!!!!!!!!!!!!!!!!---------------------------------<
 
     public void addToCard(int count, int[] goodsQuantity) {
+        Scanner scanner = new Scanner(System.in);
+        String delimiter = ",";
 
         System.out.println("Goods, available for sale:");
 
@@ -41,7 +47,7 @@ public class Basket implements Serializable {
         while (true) {
             System.out.println("Please, enter the name of the product and its quantity, separated by a comma, or type end.");
             String input = scanner.nextLine();
-            String delimiter = ",";
+//            String delimiter = ","; - ВЫНЕС В СТРОЧКУ 36 - В МЕТОД addToCard() <------------------------!!!!!!!!!!!!!!!!!!!!!---------------------------------<
 
             if ("end".equals(input)) {
 
@@ -105,7 +111,7 @@ public class Basket implements Serializable {
             }
         }
     }
-    public static Basket loadFromTextFile(File file) throws IOException {
+    public static Basket loadFromTextFile(File file) throws IOException, XPathExpressionException, ParserConfigurationException, SAXException {
         try (BufferedReader basketFromFile = new BufferedReader(new FileReader(file))) {
             Basket basket = new Basket();
             int size = Integer.parseInt(basketFromFile.readLine());
