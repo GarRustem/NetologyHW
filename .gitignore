@@ -118,3 +118,9 @@ geoService/*
 BuilderHW/.idea/
 BuilderHW/out/
 BuilderHW/target/
+
+!/LoggerHW/src/
+!/LoggerHW/pom.xml
+LoggerHW/.idea/
+LoggerHW/out/
+LoggerHW/target/
