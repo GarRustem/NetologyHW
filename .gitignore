@@ -112,3 +112,9 @@ ProductBasketStream/out/
 ProductBasketStream/target/
 
 geoService/*
+
+!/BuilderHW/src/
+!/BuilderHW/pom.xml
+BuilderHW/.idea/
+BuilderHW/out/
+BuilderHW/target/
