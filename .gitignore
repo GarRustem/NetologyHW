@@ -116,3 +116,9 @@ geoService/*
 
 ProductBasketStream/basket.bin
 ProductBasketStream/productBasket.txt
+
+!/BuilderHW/src/
+!/BuilderHW/pom.xml
+BuilderHW/.idea/
+BuilderHW/out/
+BuilderHW/target/
