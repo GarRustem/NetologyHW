@@ -124,3 +124,15 @@ BuilderHW/target/
 LoggerHW/.idea/
 LoggerHW/out/
 LoggerHW/target/
+
+!/AdapterHW/src/
+!/AdapterHW/pom.xml
+AdapterHW/.idea/
+AdapterHW/out/
+AdapterHW/target/
+
+!/FacadeHW/src/
+!/FacadeHW/pom.xml
+FacadeHW/.idea/
+FacadeHW/out/
+FacadeHW/target/
