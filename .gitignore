@@ -136,3 +136,9 @@ AdapterHW/target/
 FacadeHW/.idea/
 FacadeHW/out/
 FacadeHW/target/
+
+!/IteratorHW/src/
+!/IteratorHW/pom.xml
+IteratorHW/.idea/
+IteratorHW/out/
+IteratorHW/target/
