@@ -12,9 +12,7 @@ public class Main {
         int filterBound;
 
         Random random = new Random();
-        Filter filter = new Filter(4); // Не понадобился =(
         List<Integer> result = new ArrayList<>(); // Для формирования начального списка по заданным длине и границе.
-        List<Integer> filtered = new ArrayList<>(); // Для формирования списка после фильтрации: составляется из чисел, больших проверочного.
 
         Scanner scanner = new Scanner(System.in);
 
@@ -47,19 +45,15 @@ public class Main {
 
         System.out.println("Please, enter a filterBound.");
         filterBound = scanner.nextInt();
+        Filter filter = new Filter(filterBound); // Не понадобился =(
 
         logger.log("Filtration begin.");
 
-        // Логика фильтрации чисел, подходящих условию "число больше filterBound".
-        for(int number : result) {
-            if(number > filterBound) {
-                filtered.add(number);
-            }
-        }
+        filter.filterOut(result); // Логика фильтрации чисел, подходящих условию “число больше filterBound”.
 
-        logger.log(filtered.size() + " elements from list of " + listSize + " passed the filtration.");
+        logger.log(filter.filterOut(result).size() + " elements from list of " + listSize + " passed the filtration.");
         logger.log("Show the result on display.");
-        System.out.println("Filtered result is: " + filtered);
+        System.out.println("Filtered result is: " + filter.filterOut(result));
 
         logger.log("Exit the Program");
     }

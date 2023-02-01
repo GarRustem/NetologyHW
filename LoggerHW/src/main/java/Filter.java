@@ -11,7 +11,12 @@ public class Filter {
 
     public List<Integer> filterOut(List<Integer> source) {
         Logger logger = Logger.getInstance();
-        List<Integer> result = new ArrayList<>();
-        return result;
+        List<Integer> filtered = new ArrayList<>(); // Для формирования списка после фильтрации: составляется из чисел, больших проверочного.
+        for (int number : source) {
+            if (number > filterNum) {
+                filtered.add(number);
+            }
+        }
+        return filtered;
     }
 }
