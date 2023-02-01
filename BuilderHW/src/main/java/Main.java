@@ -1,11 +1,11 @@
 public class Main {
 
     public static void main(String[] args) throws IllegalAccessException {
+
         Person mother = new PersonBuilder()
                 .name("July")
                 .surname("Johns")
                 .age(31)
-                .city("Moscow")
                 .build();
 
         Person son = mother.newChildBuilder()
@@ -13,7 +13,7 @@ public class Main {
                 .build();
 
         System.out.println(mother.getName() + " " + mother.getSurname() + " has a son, named " + son.getName() + " " + son.getSurname());
-        System.out.println(son.getName() + " is born at " + son.getCity() + " and he is " + son.getAge() + " years old.");
+        System.out.println(son.getName() + " and he is " + son.getAge() + " years old.");
 
 //        try {
 //            new PersonBuilder().build();

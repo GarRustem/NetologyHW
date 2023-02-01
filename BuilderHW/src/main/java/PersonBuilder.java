@@ -22,13 +22,21 @@ public class PersonBuilder {
         return this;
     }
 
-    public Person build() throws IllegalAccessException {
-        if(age < 0 || name.length() < 2 || surname.length() < 2 || city.length() < 2) {
-            throw new IllegalAccessException("Incorrect data provided.");
+    public Person build() throws IllegalArgumentException, IllegalStateException {
+        if(age < 0 || age > 100 || name.length() < 2 || surname.length() < 2) {
+            throw new IllegalArgumentException("Incorrect data provided.");
         }
+
         if(name == null || surname == null) {
             throw new IllegalStateException("A Person must have name and surname.");
         }
-        return new Person(name, surname, age, city);
+        Person person;
+        if(age > 0) {
+            person = new Person(name, surname, age);
+        } else {
+            person = new Person(name, surname);
+        }
+        return person;
     }
+
 }

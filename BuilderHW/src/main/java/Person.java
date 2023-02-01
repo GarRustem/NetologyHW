@@ -15,16 +15,12 @@ public class Person {
         this.surname = surname;
         this.age = age;
     }
-    public Person(String name, String surname, int age, String city) {
-        this.name = name;
-        this.surname = surname;
-        this.age = age;
-        this.city = city;
-    }
 
     public void happyBirthday() {
-        int newAge = getAge() + 1;
-        setAge(newAge);
+        if(hasAge()) {
+            int newAge = getAge() + 1;
+            setAge(newAge);
+        }
     }
 
     public boolean hasAge() {
@@ -43,16 +39,11 @@ public class Person {
         }
     }
 
-//    @Override
-//    public String toString() {return null;}
-//    @Override
-//    public int hashCode() {return 0;}
-
     public PersonBuilder newChildBuilder() {
         PersonBuilder builder = new PersonBuilder();
-        builder.surname(this.surname);
+        builder.surname(surname);
         builder.age(0);
-        builder.city(this.city);
+        builder.city(city);
         return builder;
     }
 
@@ -73,10 +64,14 @@ public class Person {
     }
 
     public int getAge() {
-        return age;
+        if(hasAge()) {
+            return age;
+        } else {
+            return 0;
+        }
     }
 
     public String getCity() {
-        return city;
+            return city;
     }
 }
