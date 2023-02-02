@@ -137,8 +137,12 @@ FacadeHW/.idea/
 FacadeHW/out/
 FacadeHW/target/
 
-!/IteratorHW/src/
-!/IteratorHW/pom.xml
-IteratorHW/.idea/
-IteratorHW/out/
-IteratorHW/target/
+
+IteratorHW/*
+
+
+!/IteratorPattern/src/
+!/IteratorPattern/pom.xml
+IteratorPattern/.idea/
+IteratorPattern/out/
+IteratorPattern/target/
