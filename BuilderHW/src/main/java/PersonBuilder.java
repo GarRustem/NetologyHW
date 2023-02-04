@@ -23,7 +23,7 @@ public class PersonBuilder {
     }
 
     public Person build() throws IllegalArgumentException, IllegalStateException {
-        if(age < 0 || age > 100 || name.length() < 2 || surname.length() < 2) {
+        if(age < 0 || age > 100) { //  || name.length() < 2 || surname.length() < 2
             throw new IllegalArgumentException("Incorrect data provided.");
         }
 

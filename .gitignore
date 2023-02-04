@@ -122,3 +122,10 @@ ProductBasketStream/productBasket.txt
 BuilderHW/.idea/
 BuilderHW/out/
 BuilderHW/target/
+
+
+AdapterHW/
+FacadeHW/
+IteratorHW/.idea/workspace.xml
+IteratorPattern/
+LoggerHW/

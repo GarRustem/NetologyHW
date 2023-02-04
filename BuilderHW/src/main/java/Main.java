@@ -15,11 +15,11 @@ public class Main {
         System.out.println(mother.getName() + " " + mother.getSurname() + " has a son, named " + son.getName() + " " + son.getSurname());
         System.out.println(son.getName() + " and he is " + son.getAge() + " years old.");
 
-//        try {
-//            new PersonBuilder().build();
-//        } catch (IllegalStateException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            new PersonBuilder().build();
+        } catch (IllegalStateException e) {
+            e.printStackTrace();
+        }
 
         try {
             new PersonBuilder().age(-100).build();
